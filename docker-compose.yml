@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+
+  mysql:
+    image: mariadb
+    ports:
+      - 8081:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    env_file: .env
+
+  wordpress:
+    image: wordpress
+    ports:
+      - 8080:80
+    env_file: .env
+    working_dir: /var/www/html
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    volumes:
+      - ./wp-content/:/var/www/html/wp-content
