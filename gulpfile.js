@@ -15,18 +15,18 @@ var supported = [
 ];
 
 gulp.task('css', function(){
-  return gulp.src(['src/sass/**/*.scss'])
+  return gulp.src(['./wp-content/themes/webbidevaus/src/sass/**/*.scss'])
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(sourcemaps.write())
     .pipe(cssnano({
-      autoprefixer: {browsers: supported, add: true}
+      autoprefixer: { browsers: supported, add: true }
     }))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./wp-content/themes/webbidevaus/'));
 });
 
 gulp.task('watch', function(){
-  gulp.watch('src/sass/**/*.scss', ['css']);
+  gulp.watch('./wp-content/themes/webbidevaus/src/sass/**/*.scss', ['css']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['css', 'watch']);

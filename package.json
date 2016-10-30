@@ -4,7 +4,8 @@
   "description": "WordPress Twenty Sixteen Theme Sass Compiler",
   "main": "index.js",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "build": "gulp css"
   },
   "author": "Jim Frenette",
   "license": "ISC",
