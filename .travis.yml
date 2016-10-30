@@ -12,10 +12,8 @@ script:
   - npm run build
 
 after_success:
-  - echo $DOCKER_USERNAME
-  - echo $DOCKER_PASSWORD
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD;
     docker build -t anttti/wordpress . ;
     docker push anttti/wordpress;
     fi
