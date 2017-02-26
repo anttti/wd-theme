@@ -13,18 +13,18 @@ const supported = [
 ];
 
 gulp.task('css', () => {
-  return gulp.src(['./webbidevaus/src/sass/**/*.scss'])
+  return gulp.src(['./src/sass/**/*.scss'])
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(sourcemaps.write())
     .pipe(cssnano({
       autoprefixer: { browsers: supported, add: true }
     }))
-    .pipe(gulp.dest('./webbidevaus/'));
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('watch', () => {
-  gulp.watch('./webbidevaus/src/sass/**/*.scss', ['css']);
+  gulp.watch('./src/sass/**/*.scss', ['css']);
 });
 
 gulp.task('default', ['css', 'watch']);
