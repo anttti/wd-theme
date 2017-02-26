@@ -1,1 +1,1 @@
-ssh root@webbidevaus.fi 'bash -s' < local_script.sh
+ssh root@webbidevaus.fi 'bash -s' < pull.sh
