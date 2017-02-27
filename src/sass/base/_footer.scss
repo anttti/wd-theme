@@ -23,8 +23,8 @@
   font-family: inherit;
   font-size: inherit;
   font-weight: 400;
-  &:after {
-    content: "\002f";
+  a:after {
+    content: " – ";
     display: inline-block;
     font-family: $font-family-title;
     opacity: 0.7;
